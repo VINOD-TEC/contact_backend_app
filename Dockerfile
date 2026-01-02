@@ -1,8 +1,8 @@
-FROM openjdk:11
+FROM eclipse-temurin:11-jdk
 
-COPY target/contact-backend-app.jar  /usr/app/
+WORKDIR /app
 
-WORKDIR /usr/app/
+COPY target/*.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "contact-backend-app.jar"]
 
